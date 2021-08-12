@@ -1,0 +1,65 @@
+package com.stepDefinition;
+
+import java.io.IOException;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
+
+import com.projectResources.BaseClass;
+import com.projectResources.FileReadManager;
+import com.projectResources.Validation;
+
+import io.cucumber.java.After;
+import io.cucumber.java.Scenario;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+
+public class Login extends BaseClass{
+     public WebDriver driver;
+    
+	@Given("User launching the browser and Enter the URL")
+	public void user_launching_the_browser_and_enter_the_url() {
+		driver=launchBrowser(BaseClass.readProperty("Browser"));
+		driver.get(BaseClass.readProperty("URL"));
+	    
+	}
+	
+	
+
+	@Given("User Enter the Valid UserName and Passowrd")
+	public void user_enter_the_valid_user_name_and_passowrd() throws InterruptedException {
+		FileReadManager.getInstance().Locators().getLogin_link().click();
+		FileReadManager.getInstance().Locators().getUserName().sendKeys(BaseClass.readProperty("UserName_id"));
+		FileReadManager.getInstance().Locators().getPassword().sendKeys(BaseClass.readProperty("Password_xpath"));
+		FileReadManager.getInstance().Locators().getLoginButton().click();
+		Thread.sleep(5000);
+
+	}
+	@Then("User Validating the Login")
+	public void user_validating_the_login() throws InterruptedException {
+		/*String exp_message="Welcome Mallika Wadhwa";
+	    String label=FileReadManager.getInstance().Locators().getUserLable().getText();
+	   Assert.assertEquals(exp_message, label);*/
+		verifyLogin_Labal("login_verify");
+		
+	}
+	
+	
+	@Given("User Enter Invalid UserName and Passowrd")
+	public void user_enter_invalid_user_name_and_passowrd() throws InterruptedException {
+		FileReadManager.getInstance().Locators().getLogin_link().click();
+		FileReadManager.getInstance().Locators().getUserName().sendKeys("invalid_username");
+		FileReadManager.getInstance().Locators().getPassword().sendKeys("12345");
+		FileReadManager.getInstance().Locators().getLoginButton().click();
+		Thread.sleep(2000);
+		driver.switchTo().alert().accept();
+		
+	}
+	@After
+	public void teardown(Scenario scenario)
+	{
+	   System.out.println(scenario.getName());
+		driver.quit();
+	}
+}

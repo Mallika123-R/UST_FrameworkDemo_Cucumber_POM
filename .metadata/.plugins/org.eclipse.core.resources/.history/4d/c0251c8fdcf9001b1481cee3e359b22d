@@ -1,0 +1,18 @@
+package com.projectResources;
+
+import com.aventstack.extentreports.ExtentTest;
+import com.stepDefinition.Login;
+
+public class Application_key {
+	Login login;
+	ExtentTest test;
+
+	public void defaultLogin() throws InterruptedException
+	{
+		login.user_enter_the_valid_user_name_and_passowrd();
+		
+	}
+
+
+
+}

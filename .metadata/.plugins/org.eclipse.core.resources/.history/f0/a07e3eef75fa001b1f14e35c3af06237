@@ -1,0 +1,22 @@
+package com.projectResources;
+
+import org.openqa.selenium.WebElement;
+
+public class Validation{
+	
+	public boolean verifyLogin_Labal(String expectedKey, WebElement element)
+	{
+		
+		String expected=BaseClass.readProperty(expectedKey);
+		String label=element.getText();
+		
+		if(expected.equals(label))
+			{System.err.println("valid login----"+label);
+			return true;}
+		
+		else
+			return false;
+			
+	}
+
+}

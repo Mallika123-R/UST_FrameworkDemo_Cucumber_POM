@@ -1,0 +1,50 @@
+package com.projectResources;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+
+public class BaseClass {
+	
+	public  WebDriver driver;
+
+	public static String readProperty(String Key) {
+		String path=System.getProperty("user.dir")+"//src//test//resources//Config.properties";
+		File file = new File(path);
+
+		 FileInputStream fileInput = null;
+		try {
+		fileInput = new FileInputStream(file);
+		} catch (FileNotFoundException e) {
+		e.printStackTrace();
+		}
+		Properties prop = new Properties();
+
+		 // load properties file
+		try {
+		prop.load(fileInput);
+		} catch (IOException e) {
+		e.printStackTrace();
+
+		 }
+		String value = prop.getProperty(Key);
+		System.out.println("Value fetched form the conig.properties file " + Key + " = " + value);
+		return value;
+		}
+	
+	
+
+
+}

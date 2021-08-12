@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;Extent_manager&apos; to &apos;Navistar/src/main/java&apos;&#x0D;&#x0A;- Original project: &apos;DataDrivenFramework&apos;&#x0D;&#x0A;- Destination element: &apos;Navistar/src/main/java&apos;&#x0D;&#x0A;- Original element: &apos;DataDrivenFramework/src/main/java/Extent_manager&apos;" description="Copy package" destination="=Navistar/src\/main\/java" element1="/src\/main\/java&lt;Extent_manager" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1628597803365" version="1.0"/>
+</session>

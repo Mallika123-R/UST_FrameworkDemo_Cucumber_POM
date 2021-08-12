@@ -1,0 +1,42 @@
+package com.projectResources;
+
+import org.testng.asserts.SoftAssert;
+
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.stepDefinition.Login;
+
+public class Application_key {
+	Login login;
+	ExtentTest test;
+	SoftAssert softassert;
+
+	public void defaultLogin() throws InterruptedException
+	{
+		login.user_enter_the_valid_user_name_and_passowrd();
+		
+	}
+
+	public void setReport(ExtentTest test)
+	{
+		this.test=test;
+	}
+	public void log(String msg)
+	{
+		System.out.println(msg);
+		test.log(Status.INFO, msg);
+	}
+	public void reportfail(String failure_msg, boolean stopOnFailure)
+	{
+		System.out.println(failure_msg);
+		test.log(Status.FAIL,failure_msg);
+		softassert.fail(failure_msg);
+		
+		if(stopOnFailure)
+			softassert.assertAll();
+			
+	}
+
+	
+
+}

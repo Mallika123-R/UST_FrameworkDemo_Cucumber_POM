@@ -1,0 +1,21 @@
+package com.projectResources;
+
+import org.openqa.selenium.WebDriver;
+
+public class Validation extends BaseClass{
+	WebDriver driver;
+	public boolean verifyTitle(String expectedTitleKey)
+	{
+		
+		String expectedTitle=BaseClass.readProperty(expectedTitleKey);
+		String actualTitle=driver.getTitle();
+		
+		if(expectedTitle.equals(actualTitle))
+			return true;
+		
+		else
+			return false;
+			
+	}
+
+}

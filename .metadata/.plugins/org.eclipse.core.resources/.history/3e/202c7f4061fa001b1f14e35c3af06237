@@ -1,0 +1,24 @@
+package com.projectResources;
+
+import org.openqa.selenium.WebDriver;
+
+
+public class Validation extends BaseClass{
+
+
+	public boolean verifyLogin_Labal(String expectedKey)
+	{
+		
+		String expected=BaseClass.readProperty(expectedKey);
+		String label=FileReadManager.getInstance().Locators().getUserLable().getText();
+		
+		if(expected.equals(label))
+			{System.err.println("valid login----"+label);
+			return true;}
+		
+		else
+			return false;
+			
+	}
+
+}

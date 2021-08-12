@@ -1,0 +1,7 @@
+package Keywords;
+
+import com.projectResources.BaseClass;
+
+public class Generic_key extends BaseClass{
+
+}

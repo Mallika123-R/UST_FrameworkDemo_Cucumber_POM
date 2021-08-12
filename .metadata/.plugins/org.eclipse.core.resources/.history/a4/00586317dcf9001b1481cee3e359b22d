@@ -1,0 +1,20 @@
+
+import com.stepDefinition.Login;
+
+public class Application_key {
+	Login lopgin;
+
+	public Application_key()
+	{
+		
+		
+	}
+
+	public void defaultLogin()
+	{
+		login.user_enter_the_valid_user_name_and_passowrd();
+	}
+
+	
+
+}

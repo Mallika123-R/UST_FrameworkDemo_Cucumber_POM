@@ -1,0 +1,29 @@
+package com.projectResources;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
+public class Application_Key {
+	public Properties prop;
+	public FileInputStream fs;
+	
+	public Application_Key() throws IOException
+	{
+		try {
+			prop=new Properties();
+			 String path=System.getProperty("user.dir")+"//src//test//resources//Config.properties";
+	       fs=new FileInputStream(path);
+	        prop.load(fs);
+		 
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			
+		}
+	
+		//return prop;
+		
+	}
+}

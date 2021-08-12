@@ -1,0 +1,13 @@
+package com.projectResources;
+
+import org.openqa.selenium.WebDriver;
+
+import io.cucumber.java.After;
+import io.cucumber.java.Scenario;
+
+public class Hooks {
+	WebDriver driver;
+	
+	
+
+}

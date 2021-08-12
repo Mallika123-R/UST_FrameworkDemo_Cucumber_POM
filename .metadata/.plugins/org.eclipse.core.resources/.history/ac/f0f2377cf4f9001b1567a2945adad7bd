@@ -1,0 +1,21 @@
+package com.projectResources;
+
+import org.openqa.selenium.WebDriver;
+
+public class Validation extends BaseClass{
+	WebDriver driver;
+	public boolean verifyTitle(String expectedKey)
+	{
+		
+		String expected=BaseClass.readProperty(expectedKey);
+		String label=FileReadManager.getInstance().Locators().getUserLable().getText();
+		
+		if(expected.equals(label))
+			return true;
+		
+		else
+			return false;
+			
+	}
+
+}

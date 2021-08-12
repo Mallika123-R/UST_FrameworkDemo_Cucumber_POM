@@ -1,0 +1,10 @@
+Feature: Verify Navistar Login Page
+Scenario: Validating Navistar login page with Valid crendantial 
+Given User launching the browser and Enter the URL
+And   User Enter Name and Passowrd
+Then  User Validating the Login 
+  
+Scenario: Validating Navistar login page with Invalid crendantial 
+Given User launching the browser and Enter the URL
+And   User Enter Name and Passowrd
+Then  User Validating the Login 

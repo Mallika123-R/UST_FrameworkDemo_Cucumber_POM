@@ -1,0 +1,75 @@
+package com.stepDefinition;
+
+import java.io.IOException;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
+
+import com.projectResources.BaseClass;
+import com.projectResources.FileReadManager;
+
+
+import io.cucumber.java.After;
+import io.cucumber.java.Scenario;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+
+public class Login extends BaseClass{
+     public WebDriver driver;
+     public WebElement getLogin;
+     public  WebElement name;
+    
+	@Given("User launching the browser and Enter the URL")
+	public void user_launching_the_browser_and_enter_the_url() {
+		driver=launchBrowser(BaseClass.readProperty("Browser"));
+		driver.get(BaseClass.readProperty("URL"));
+	    
+	}
+	
+	
+
+	@Given("User Enter the Valid UserName and Passowrd")
+	public void user_enter_the_valid_user_name_and_passowrd() throws InterruptedException {
+	
+		getLogin=FileReadManager.getInstance().Locators().Login_link;
+		click(getLogin);
+	
+		name=FileReadManager.getInstance().Locators().userName;
+		type(name,"UserName_id");
+		
+		WebElement password=FileReadManager.getInstance().Locators().Password;
+		type(name,"Password_xpath");
+		
+		WebElement login=FileReadManager.getInstance().Locators().LoginButton;
+		click(login);
+		Thread.sleep(5000);
+
+	}
+	@Then("User Validating the Login")
+	public void user_validating_the_login() throws InterruptedException {
+		
+		WebElement lable=FileReadManager.getInstance().Locators().User_lable;
+		verifyLogin_Labal("login_verify",lable);
+		
+	}
+	
+	
+	@Given("User Enter Invalid UserName and Passowrd")
+	public void user_enter_invalid_user_name_and_passowrd() throws InterruptedException {
+		click(getLogin);
+		type(name,"invalid_username");
+		FileReadManager.getInstance().Locators().getPassword().sendKeys("12345");
+		FileReadManager.getInstance().Locators().getLoginButton().click();
+		Thread.sleep(2000);
+		driver.switchTo().alert().accept();
+		
+	}
+	@After
+	public void teardown(Scenario scenario)
+	{
+	   System.out.println(scenario.getName());
+		driver.quit();
+	}
+}

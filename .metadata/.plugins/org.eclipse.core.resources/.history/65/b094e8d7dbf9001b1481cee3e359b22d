@@ -1,0 +1,23 @@
+import com.aventstack.extentreports.ExtentTest;
+import com.stepDefinition.Login;
+
+public class Application_key extends BaseClass {
+	Login lopgin;
+	public Application_key()
+	{
+		login.user_enter_the_valid_user_name_and_passowrd();
+		
+	}
+
+	public void defaultLogin()
+	{
+		
+	}
+
+	public void setReport(ExtentTest test) {
+       this.test=test;
+		
+	}
+	
+
+}

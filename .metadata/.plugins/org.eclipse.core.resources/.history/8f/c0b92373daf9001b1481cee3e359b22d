@@ -1,0 +1,124 @@
+package com.projectResources;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.ITestContext;
+import org.testng.annotations.AfterMethod;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
+import Extent_manager.extent_report;
+
+
+
+
+public class BaseClass {
+	
+	static WebDriver driver;
+	static ExtentReports report;
+	static ExtentTest test;
+	public  Application_key app;
+	
+	    
+		 public void report(ITestContext context)
+		 {
+			=new Application_key();
+			 report=extent_report.getReports();
+			  test=report.createTest(context.getCurrentXmlTest().getName());
+			 test.log(Status.INFO,"Starting test"+context.getCurrentXmlTest().getName());
+			 app.setReport(test);
+			    app.OpenBrowser("Edge");
+			   
+			   // app.defaultLogin();
+			    con.setAttribute("report", rep);
+			    con.setAttribute("test", test);
+			
+		 }
+	public static String readProperty(String Key) {
+		String path=System.getProperty("user.dir")+"//src//test//resources//Config.properties";
+		File file = new File(path);
+
+		 FileInputStream fileInput = null;
+		try {
+		fileInput = new FileInputStream(file);
+		} catch (FileNotFoundException e) {
+		e.printStackTrace();
+		}
+		Properties prop = new Properties();
+
+		 // load properties file
+		try {
+		prop.load(fileInput);
+		} catch (IOException e) {
+		e.printStackTrace();
+
+		 }
+		String value = prop.getProperty(Key);
+		System.out.println("Value fetched form the conig.properties file " + Key + " = " + value);
+		return value;
+		}
+
+	public static WebDriver launchBrowser(String browsername)
+	{
+		if(browsername.equals("Mozilla"))
+		{   
+			System.out.println("browser is opening" +browsername);
+			String path=System.getProperty("user.dir")+"//src//test//resources//Drivers//geckodriver.exe";
+			System.setProperty("webdriver.gecko.driver",path);
+			
+			driver=new FirefoxDriver();
+		}
+		
+		else if(browsername.equals("Edge"))
+		{
+			System.out.println("browser is opening" +browsername);
+			String path=System.getProperty("user.dir")+"//src//test//resources//Drivers//msedgedriver.exe";
+			System.setProperty("webdriver.edge.driver",path);
+		
+		
+			driver=new EdgeDriver();	
+			
+			
+	     }
+		else if(browsername.equals("Chrome"))
+		{
+			System.out.println("browser is opening" +browsername);
+			String path=System.getProperty("user.dir")+"//src//test//resources//Drivers//chromedriver.exe";
+			System.setProperty("webdriver.chrome.driver",path);
+		
+			driver=new ChromeDriver();			
+			
+	     }
+		else if(browsername.equals("Internet_Explorer"))
+		{
+			System.out.println("browser is opening" +browsername);
+			String path=System.getProperty("user.dir")+"//src//test//resources//Drivers//IEdriverServer.exe";
+			System.setProperty("webdriver.gecko.driver",path);
+		
+			driver=new ChromeDriver();			
+			
+	     }
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		return driver;	
+
+	}
+	@AfterMethod
+	public void quitBrowser()
+	{
+		driver.quit();
+	}
+
+
+
+}

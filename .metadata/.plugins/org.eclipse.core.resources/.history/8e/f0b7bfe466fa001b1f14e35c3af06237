@@ -1,0 +1,27 @@
+package Keywords;
+
+import com.projectResources.BaseClass;
+import com.projectResources.FileReadManager;
+
+public class Generic_key extends BaseClass{
+	
+	public void click(String locatorKey)
+	{
+		System.out.println("clicking on---"+locatorKey);
+		FileReadManager.getInstance().Locators().getLogin_link().click();
+	}
+	public void type(String locatorKey, String data)
+	{
+		System.out.println("typing in--"+locatorKey+".Data"+data);
+		FileReadManager.getInstance().Locators().getUserName().sendKeys(data);
+		FileReadManager.getInstance().Locators().getPassword().sendKeys(data);
+		getElement((locatorKey)).sendKeys(data);
+		//getElement(locator).sendKeys(data);
+	}
+	public void clear(String locatorKey)
+	{
+		log("field is clear-->enter your portfolio"+locatorKey);
+		getElement(locatorKey).clear();
+	}
+
+}

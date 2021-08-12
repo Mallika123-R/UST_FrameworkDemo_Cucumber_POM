@@ -1,0 +1,64 @@
+package com.projectResources;
+
+import static com.projectResources.BaseClass.driver;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class PageObjects extends BaseClass {
+	
+	public PageObjects() {
+		PageFactory.initElements(driver, this);
+	}
+
+	//Locator for the userName Login
+	@FindBy(id = "login2")
+	WebElement Login_link;
+
+	public WebElement getLogin_link() {
+		return Login_link;
+	}
+	
+	@FindBy(id = "loginusername")
+	WebElement userName;
+
+	public WebElement getUserName() {
+		return userName;
+	}
+	//Locator for the Password Login
+	@FindBy(id = "loginpassword")
+	WebElement Password;
+
+	public WebElement getPassword() {
+		return Password;
+	}
+
+	//Locator for the  Submit Method
+
+	@FindBy(xpath = "//button[text()='Log in']")
+	WebElement LoginButton;
+
+	public WebElement getLoginButton(String locatorKey) {
+		if(!isElementPresent(locatorKey))
+        System.out.println("element is not presence--"+locatorKey);
+		return LoginButton;
+		
+		f(!isElementVisible(locatorKey))
+		{//report failure
+			System.out.println("element is not visible--"+locatorKey);
+		}
+		else
+			System.out.println("locator is visible--"+locatorKey);
+	}
+	
+	
+	@FindBy(id = "nameofuser")
+	WebElement User_lable;
+
+	public WebElement getUserLable() {
+		return User_lable;
+	}
+	
+
+}

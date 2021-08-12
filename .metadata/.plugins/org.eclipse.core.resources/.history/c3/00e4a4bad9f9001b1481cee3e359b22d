@@ -1,0 +1,10 @@
+import com.aventstack.extentreports.ExtentTest;
+
+public class Application_key extends BaseClass {
+	
+	public void setReport(ExtentTest test)
+	{
+		this.test=test;
+	}
+
+}

@@ -1,0 +1,141 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-08-11T11:36:14.277Z",
+        "line": 4,
+        "name": "Validating Navistar login page with Valid crendantial",
+        "description": "",
+        "id": "verify-navistar-login-page;validating-navistar-login-page-with-valid-crendantial",
+        "after": [
+          {
+            "result": {
+              "duration": 1366000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.stepDefinition.Login.teardown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 27547000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User launching the browser and Enter the URL",
+            "match": {
+              "location": "com.stepDefinition.Login.user_launching_the_browser_and_enter_the_url()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3155000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User Enter the Valid UserName and Passowrd",
+            "match": {
+              "location": "com.stepDefinition.Login.user_enter_the_valid_user_name_and_passowrd()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "error_message": "org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : Please fill out Username and Password.}\n  (Session info: MicrosoftEdge\u003d92.0.902.67): Please fill out Username and Password.\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027DESKTOP-50659SL\u0027, ip: \u0027192.168.1.6\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_271\u0027\nDriver info: org.openqa.selenium.edge.EdgeDriver\nCapabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 92.0.902.67, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:62325}, msedge: {msedgedriverVersion: 92.0.902.62 (e0b431c3580439..., userDataDir: C:\\Users\\Mallika\\AppData\\Lo...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: be930247f7d7557d9dadd6e783744648\n*** Element info: {Using\u003dxpath, value\u003d//a[contains(text(),\u0027Welcome\u0027)]}\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\r\n\tat com.sun.proxy.$Proxy18.getText(Unknown Source)\r\n\tat com.projectResources.BaseClass.verifyLogin_Labal(BaseClass.java:114)\r\n\tat com.stepDefinition.Login.user_validating_the_login(Login.java:55)\r\n\tat ✽.User Validating the Login(file:///D:/Navistar_project/Navistar/src/test/resources/Features/Navistar_login.feature:7)\r\n",
+              "duration": 512000000,
+              "status": "failed"
+            },
+            "line": 7,
+            "name": "User Validating the Login",
+            "match": {
+              "location": "com.stepDefinition.Login.user_validating_the_login()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@TestCase1"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-08-11T11:36:47.221Z",
+        "line": 10,
+        "name": "Validating Navistar login page with Invalid crendantial",
+        "description": "",
+        "id": "verify-navistar-login-page;validating-navistar-login-page-with-invalid-crendantial",
+        "after": [
+          {
+            "result": {
+              "duration": 3195000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.stepDefinition.Login.teardown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 17619000000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "User launching the browser and Enter the URL",
+            "match": {
+              "location": "com.stepDefinition.Login.user_launching_the_browser_and_enter_the_url()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "error_message": "org.openqa.selenium.NoAlertPresentException: no such alert\n  (Session info: MicrosoftEdge\u003d92.0.902.67)\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027DESKTOP-50659SL\u0027, ip: \u0027192.168.1.6\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_271\u0027\nDriver info: org.openqa.selenium.edge.EdgeDriver\nCapabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 92.0.902.67, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:58162}, msedge: {msedgedriverVersion: 92.0.902.62 (e0b431c3580439..., userDataDir: C:\\Users\\Mallika\\AppData\\Lo...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: e4ed64b03500cdae787acd04c997abab\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat java.lang.reflect.Constructor.newInstance(Unknown Source)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.alert(RemoteWebDriver.java:932)\r\n\tat com.stepDefinition.Login.user_enter_invalid_user_name_and_passowrd(Login.java:77)\r\n\tat ✽.User Enter Invalid UserName and Passowrd(file:///D:/Navistar_project/Navistar/src/test/resources/Features/Navistar_login.feature:12)\r\n",
+              "duration": 1382000000,
+              "status": "failed"
+            },
+            "line": 12,
+            "name": "User Enter Invalid UserName and Passowrd",
+            "match": {
+              "location": "com.stepDefinition.Login.user_enter_invalid_user_name_and_passowrd()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "skipped"
+            },
+            "line": 13,
+            "name": "User Validating the Login",
+            "match": {
+              "location": "com.stepDefinition.Login.user_validating_the_login()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@TestCase2"
+          }
+        ]
+      }
+    ],
+    "name": "Verify Navistar Login Page",
+    "description": "",
+    "id": "verify-navistar-login-page",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/Features/Navistar_login.feature",
+    "tags": []
+  }
+]

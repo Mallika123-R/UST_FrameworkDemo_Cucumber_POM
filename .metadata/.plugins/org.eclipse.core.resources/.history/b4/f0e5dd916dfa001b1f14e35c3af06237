@@ -1,0 +1,102 @@
+package com.projectResources;
+
+import static com.projectResources.BaseClass.driver;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class PageObjects extends BaseClass {
+	 
+	public PageObjects() {
+		PageFactory.initElements(driver, this);
+	}
+
+	//Locator for the userName Login
+	@FindBy(id = "login2")
+	WebElement Login_link;
+
+	public WebElement getLogin_link() {
+		return Login_link;
+	}
+	
+	@FindBy(id = "loginusername")
+	WebElement userName;
+
+	public WebElement getUserName() {
+		return userName;
+	}
+	//Locator for the Password Login
+	@FindBy(id = "loginpassword")
+	WebElement Password;
+
+	public WebElement getPassword() {
+		return Password;
+	}
+
+	//Locator for the  Submit Method
+
+	@FindBy(xpath = "//button[text()='Log in']")
+	WebElement LoginButton;
+
+	public WebElement getLoginButton(WebElement locatorKey) {
+		if(!isElementPresent(locatorKey))
+		{
+        System.out.println("element is not presence--"+locatorKey);
+		}
+		
+		
+		if(!isElementVisible(locatorKey))
+		{//report failure
+			System.out.println("element is not visible--"+locatorKey);
+		}
+		else
+			System.out.println("locator is visible--"+locatorKey);
+		
+		return LoginButton;
+	}
+	
+	
+	@FindBy(id = "nameofuser")
+	WebElement User_lable;
+
+	public WebElement getUserLable() {
+		return User_lable;
+	}
+	
+	public boolean isElementPresent(WebElement locatorKey)
+	{
+		System.out.println("check presence of locator--"+locatorKey);
+		WebDriverWait wait=new WebDriverWait(driver,60);
+		try{
+			wait.until(ExpectedConditions.invisibilityOf(locatorKey));
+		}catch(Exception e)
+		{
+			return false;
+		}
+		return true;
+	}
+	public boolean isElementVisible(WebElement element)
+	{
+		System.out.println("check visibility of locator--"+element);
+		WebDriverWait wait=new WebDriverWait(driver,60);
+		try{
+			wait.until(ExpectedConditions.visibilityOf(element));
+		}catch(Exception e)
+		{
+			return false;
+		}
+		return true;
+	}
+	
+	
+	
+	
+
+}
